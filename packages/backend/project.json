@@ -36,6 +36,14 @@
         "jestConfig": "packages/backend/jest.config.ts",
         "runInBand": true
       }
+    },
+    "integrationTest": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/backend",
+        "command": "ts-node --swc src/bin/www"
+      },
+      "dependsOn": ["^start"]
     }
   }
 }
