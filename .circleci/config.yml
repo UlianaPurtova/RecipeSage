@@ -56,13 +56,12 @@ jobs:
       - run:
           name: lint, typecheck, test, build
           command: npx nx run-many --targets=lint,typecheck,test,build
-      - run:
-          name: start backend
-          command: npx nx run-many --targets=start &
-      - run:
-          name: wait
-          command: sleep 5m
-          # command: npx ts-node --swc --project packages/backend/tsconfig.json packages/backend/src/bin/www ./packages/backend ./packages/trpc ./packages/util ./packages/prisma &
+      # - run:
+      #     name: start backend
+      #     command: npx nx run-many --targets=start &
+      # - run:
+      #     name: wait
+      #     command: sleep 5m
       - run:
           name: integration test
           command: npx nx run-many --targets=integrationTest
